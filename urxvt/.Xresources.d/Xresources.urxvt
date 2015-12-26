@@ -67,7 +67,7 @@ URxvt*scrollBar:                      false
 ! URxvt*pointerColor2:                  color
 ! URxvt*borderColor:                    color
 ! URxvt*iconFile:                       /usr/share/icons/Clarity/scalable/apps/terminal.svg
-URxvt*font:                           xft:inconsolata:size=12
+URxvt*font:                           xft:DejaVu Sans Mono:size=11
 ! URxvt*boldFont:                       fontname
 ! URxvt*italicFont:                     fontname
 ! URxvt*boldItalicFont:                 fontname
@@ -89,7 +89,7 @@ URxvt*font:                           xft:inconsolata:size=12
 ! URxvt*internalBorder:                 number
 ! URxvt*borderLess:                     boolean
 ! URxvt*lineSpace:                      number
-! URxvt*letterSpace:                    number
+URxvt*letterSpace:                    -1
 ! URxvt*skipBuiltinGlyphs:              boolean
 ! URxvt*pointerBlankDelay:              number
 ! URxvt*backspacekey:                   string
