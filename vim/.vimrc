@@ -6,6 +6,18 @@ set shiftwidth=4
 set cursorline
 set textwidth=80
 
+" plug section
+let s:f_plug = expand('$HOME/.vim/autoload/plug.vim')
+
+if !filereadable(s:f_plug)
+  execute '!curl -fLo ' . s:f_plug .
+        \ ' --create-dirs' .
+        \ ' https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+else
+  call plug#begin()
+  call plug#end()
+endif
+
 syntax enable
 set background=dark
 
