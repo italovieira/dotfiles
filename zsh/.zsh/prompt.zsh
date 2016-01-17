@@ -1,8 +1,8 @@
 # Customize prompt
-# See https://wiki.archlinux.org/index.php/Zsh#Customizing_the_prompt
-# See http://www.nparikh.org/unix/prompt.php
-# See https://wiki.archlinux.org/index.php/Git#Git_prompt
-# See https://git-scm.com/book/tr/v2/Git-in-Other-Environments-Git-in-Zsh
+# https://wiki.archlinux.org/index.php/Zsh#Customizing_the_prompt
+# http://www.nparikh.org/unix/prompt.php
+# https://wiki.archlinux.org/index.php/Git#Git_prompt
+# https://git-scm.com/book/tr/v2/Git-in-Other-Environments-Git-in-Zsh
 autoload -U colors && colors
 setopt prompt_subst
 source /usr/share/git/completion/git-prompt.sh

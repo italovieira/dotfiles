@@ -132,7 +132,7 @@ URxvt*letterSpace:                    -1
 ! URxvt*url-launcher:                   string
 
 ! Make URLs clickage to open links in Firefox
-! See https://wiki.archlinux.org/index.php/Rxvt-unicode#Clickable_URLs
+! https://wiki.archlinux.org/index.php/Rxvt-unicode#Clickable_URLs
 URxvt.perl-ext-common: default,matcher
 URxvt.url-launcher: /usr/bin/firefox
 URxvt.matcher.button: 1
