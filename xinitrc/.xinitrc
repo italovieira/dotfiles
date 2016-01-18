@@ -4,4 +4,4 @@ xrdb -I$HOME ~/.Xresources
 # https://wiki.archlinux.org/index.php/Disable_PC_speaker_beep#In_X
 xset -b
 
-exec startxfce4
+exec i3
