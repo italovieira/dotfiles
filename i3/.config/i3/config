@@ -167,3 +167,6 @@ bindsym XF86AudioMute exec --no-startup-id ponymix -N toggle
 bindsym XF86AudioPlay exec --no-startup-id playerctl play-pause
 bindsym XF86AudioNext exec --no-startup-id playerctl next
 bindsym XF86AudioPrev exec --no-startup-id playerctl previous
+
+# My settings
+hide_edge_borders both
