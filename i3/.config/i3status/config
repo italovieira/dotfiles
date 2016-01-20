@@ -11,19 +11,14 @@ general {
         interval = 5
 }
 
-order += "ipv6"
-order += "disk /"
-order += "run_watch DHCP"
-order += "run_watch VPN"
+order += "volume master"
 order += "wireless _first_"
-order += "ethernet _first_"
 order += "battery 0"
-order += "load"
 order += "tztime local"
 
 wireless _first_ {
-        format_up = "W: (%quality at %essid) %ip"
-        format_down = "W: down"
+        format_up = "W %quality at %essid"
+        format_down = "W (down)"
 }
 
 ethernet _first_ {
@@ -33,7 +28,8 @@ ethernet _first_ {
 }
 
 battery 0 {
-        format = "%status %percentage %remaining"
+        format = "BAT %percentage %remaining"
+        format_down = "BAT (No battery)"
 }
 
 run_watch DHCP {
@@ -45,7 +41,7 @@ run_watch VPN {
 }
 
 tztime local {
-        format = "%Y-%m-%d %H:%M:%S"
+        format = "DATE %a %b %d TIME %H:%M:%S"
 }
 
 load {
@@ -54,4 +50,10 @@ load {
 
 disk "/" {
         format = "%avail"
+}
+
+volume master {
+        format = "VOLUME %volume"
+        format_muted = "VOLUME %volume"
+        device = "pulse"
 }
