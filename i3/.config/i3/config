@@ -168,5 +168,11 @@ bindsym XF86AudioPlay exec --no-startup-id playerctl play-pause
 bindsym XF86AudioNext exec --no-startup-id playerctl next
 bindsym XF86AudioPrev exec --no-startup-id playerctl previous
 
+# Screenshots
+set $output_file $HOME/Pictures/screenshots/$(date +%F-%T).png
+bindsym Print exec --no-startup-id maim $output_file # Whole screen
+bindsym Shift+Print exec --no-startup-id maim -s $output_file # Selected region
+bindsym Ctrl+Print exec --no-startup-id maim -i $(xdotool getactivewindow) $output_file # Active window
+
 # My settings
 hide_edge_borders both
