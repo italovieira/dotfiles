@@ -30,7 +30,7 @@ font pango:monospace 8
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec urxvt -T URxvt -e zsh -c tmux
+bindsym $mod+Return exec termite -e tmux
 
 # kill focused window
 bindsym $mod+Shift+q kill
