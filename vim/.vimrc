@@ -17,12 +17,13 @@ else
   call plug#begin()
   " Colorschemes
   Plug 'chriskempson/base16-vim'
+  Plug 'morhetz/gruvbox'
   call plug#end()
 endif
 
 syntax enable
 set background=dark
-silent! colorscheme base16-default
+silent! colorscheme gruvbox
 
 filetype plugin indent on
 
