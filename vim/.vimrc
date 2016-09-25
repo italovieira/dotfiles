@@ -5,6 +5,7 @@ set tabstop=4
 set shiftwidth=4
 set cursorline
 set textwidth=80
+set showcmd
 
 " plug section
 let s:f_plug = expand('$HOME/.vim/autoload/plug.vim')
