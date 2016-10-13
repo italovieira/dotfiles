@@ -176,3 +176,6 @@ bindsym Ctrl+Print exec --no-startup-id maim -i $(xdotool getactivewindow) $outp
 
 # My settings
 hide_edge_borders both
+
+# Autostart
+exec --no-startup-id sh $HOME/.fehbg &
