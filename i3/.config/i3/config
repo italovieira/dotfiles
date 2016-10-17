@@ -174,8 +174,12 @@ bindsym Print exec --no-startup-id maim $output_file # Whole screen
 bindsym Shift+Print exec --no-startup-id maim -s $output_file # Selected region
 bindsym Ctrl+Print exec --no-startup-id maim -i $(xdotool getactivewindow) $output_file # Active window
 
+# Lock screen
+bindsym $mod+Shift+x exec --no-startup-id xautolock -locknow
+
 # My settings
 hide_edge_borders both
 
 # Autostart
 exec --no-startup-id sh $HOME/.fehbg &
+exec --no-startup-id xautolock -time 7 -locker "i3lock -n -i $(grep -o "'.*'" $HOME/.fehbg)" &
