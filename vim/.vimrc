@@ -16,6 +16,8 @@ if !filereadable(s:f_plug)
         \ ' https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 else
   call plug#begin()
+  " General
+  Plug 'neomake/neomake'
   " Colorschemes
   Plug 'chriskempson/base16-vim'
   Plug 'morhetz/gruvbox'
@@ -31,3 +33,6 @@ filetype plugin indent on
 if has('termguicolors')
     set termguicolors
 endif
+
+" Neomake
+autocmd BufWritePost * silent! Neomake
