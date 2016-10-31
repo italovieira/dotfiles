@@ -1,8 +1,8 @@
 set number
 set expandtab
-set softtabstop=4
-set tabstop=4
-set shiftwidth=4
+set softtabstop=2
+set tabstop=2
+set shiftwidth=2
 set cursorline
 set textwidth=80
 set showcmd
@@ -27,9 +27,6 @@ set background=dark
 silent! colorscheme gruvbox
 
 filetype plugin indent on
-
-"Config HTML files
-autocmd filetype html setlocal softtabstop=2 tabstop=2 shiftwidth=2
 
 if has('termguicolors')
     set termguicolors
