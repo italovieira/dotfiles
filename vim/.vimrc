@@ -34,5 +34,7 @@ if has('termguicolors')
     set termguicolors
 endif
 
-" Neomake
-autocmd BufWritePost * silent! Neomake
+augroup Neomake
+  autocmd!
+  autocmd BufWritePost * silent! Neomake
+augroup END
