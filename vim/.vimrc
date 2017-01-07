@@ -18,6 +18,8 @@ else
   call plug#begin()
   " General
   Plug 'neomake/neomake'
+  Plug 'junegunn/fzf', { 'do': './install --bin' }
+  Plug 'junegunn/fzf.vim'
   " Colorschemes
   Plug 'chriskempson/base16-vim'
   Plug 'morhetz/gruvbox'
