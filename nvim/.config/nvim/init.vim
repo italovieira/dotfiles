@@ -8,14 +8,14 @@ set textwidth=80
 set showcmd
 
 " plug section
-let s:f_plug = expand('$HOME/.vim/autoload/plug.vim')
+let s:f_plug = expand('$HOME/.local/share/nvim/site/autoload/plug.vim')
 
 if !filereadable(s:f_plug)
   execute '!curl -fLo ' . s:f_plug .
         \ ' --create-dirs' .
         \ ' https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 else
-  call plug#begin()
+  call plug#begin('$HOME/.local/share/nvim/plugged')
   " General
   Plug 'neomake/neomake'
   Plug 'junegunn/fzf', { 'do': './install --bin' }
