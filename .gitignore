@@ -1,14 +1,4 @@
-# https://github.com/github/gitignore/blob/master/Global/Vim.gitignore
-# Vim
-# swap
-vim/[._]*.s[a-w][a-z]
-vim/[._]s[a-w][a-z]
-# session
-vim/Session.vim
-# temporary
-vim/.netrwhist
-vim/*~
-# auto-generated tag files
-vim/tags
-#
-vim/.vim/*
+# Neovim
+nvim/.netrwhist
+nvim/*~
+nvim/.config/nvim/*
