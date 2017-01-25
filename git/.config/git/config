@@ -1,0 +1,5 @@
+[user]
+	name = Ítalo Vieira
+	email = italogv@hotmail.com
+[core]
+	editor = nvim
