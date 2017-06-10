@@ -20,6 +20,7 @@ else
   Plug 'neomake/neomake'
   Plug 'junegunn/fzf', { 'do': './install --bin' }
   Plug 'junegunn/fzf.vim'
+  Plug 'tpope/vim-fugitive'
   " Colorschemes
   Plug 'chriskempson/base16-vim'
   Plug 'morhetz/gruvbox'
