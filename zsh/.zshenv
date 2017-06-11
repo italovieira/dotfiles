@@ -1,3 +1,3 @@
-export EDITOR='nvim'
-export VISUAL='nvim'
+export EDITOR='vim'
+export VISUAL='vim'
 export BROWSER='firefox'
