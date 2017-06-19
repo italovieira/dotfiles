@@ -6,6 +6,7 @@ set shiftwidth=2
 set cursorline
 set textwidth=80
 set showcmd
+set list
 
 " plug section
 let s:f_plug = expand('$HOME/.local/share/nvim/site/autoload/plug.vim')
