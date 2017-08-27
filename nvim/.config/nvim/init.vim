@@ -37,9 +37,9 @@ filetype plugin indent on
 " :h ft-syntax-omni
 if has("autocmd") && exists("+omnifunc")
   autocmd Filetype *
-        \	if &omnifunc == "" |
-        \		setlocal omnifunc=syntaxcomplete#Complete |
-        \	endif
+        \ if &omnifunc == "" |
+        \  setlocal omnifunc=syntaxcomplete#Complete |
+        \ endif
 endif
 
 if has('termguicolors')
