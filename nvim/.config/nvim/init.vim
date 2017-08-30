@@ -43,7 +43,7 @@ if has("autocmd") && exists("+omnifunc")
 endif
 
 if has('termguicolors')
-    set termguicolors
+  set termguicolors
 endif
 
 augroup Neomake
