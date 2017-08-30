@@ -50,3 +50,7 @@ augroup Neomake
   autocmd!
   autocmd BufWritePost * silent! Neomake
 augroup END
+
+" Maps
+xnoremap < <gv
+xnoremap > >gv
