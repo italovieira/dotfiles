@@ -22,6 +22,7 @@ else
   Plug 'junegunn/fzf', { 'do': './install --bin' }
   Plug 'junegunn/fzf.vim'
   Plug 'tpope/vim-fugitive'
+  Plug 'tpope/vim-surround'
   " Colorschemes
   Plug 'chriskempson/base16-vim'
   Plug 'morhetz/gruvbox'
