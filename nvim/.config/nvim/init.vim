@@ -29,6 +29,8 @@ else
   call plug#end()
 endif
 
+let g:gruvbox_italic = 1
+
 syntax enable
 set background=dark
 silent! colorscheme gruvbox
