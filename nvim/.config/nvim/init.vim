@@ -17,19 +17,19 @@ if !filereadable(s:f_plug)
         \ ' https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 else
   call plug#begin('$HOME/.local/share/nvim/plugged')
-  " General
+
   Plug 'neomake/neomake'
   Plug 'junegunn/fzf', { 'do': './install --bin' }
   Plug 'junegunn/fzf.vim'
   Plug 'tpope/vim-fugitive'
   Plug 'tpope/vim-surround'
-  " Colorschemes
+
   Plug 'chriskempson/base16-vim'
   Plug 'morhetz/gruvbox'
+  let g:gruvbox_italic = 1
+
   call plug#end()
 endif
-
-let g:gruvbox_italic = 1
 
 syntax enable
 set background=dark
