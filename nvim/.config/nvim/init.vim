@@ -23,6 +23,7 @@ else
   Plug 'junegunn/fzf.vim'
   Plug 'tpope/vim-fugitive'
   Plug 'tpope/vim-surround'
+  Plug 'mhinz/vim-signify'
 
   Plug 'chriskempson/base16-vim'
   Plug 'morhetz/gruvbox'
