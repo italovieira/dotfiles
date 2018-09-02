@@ -181,4 +181,4 @@ hide_edge_borders both
 
 # Autostart
 exec --no-startup-id sh $HOME/.fehbg &
-exec --no-startup-id xautolock -time 7 -locker "i3lock -n -i $(grep -o "'.*'" $HOME/.fehbg)" &
+exec --no-startup-id xautolock -time 7 -locker "i3lock -n -i $(grep -o "'.*'" $HOME/.fehbg | tr -d \')" &
