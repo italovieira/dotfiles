@@ -1,6 +1,10 @@
 import XMonad
+import XMonad.Util.Run (spawnPipe)
 
-main = xmonad def
-    { modMask  = mod4Mask
-    , terminal = "termite"
-    }
+main = do
+    spawnPipe "xmobar"
+
+    xmonad def
+        { modMask  = mod4Mask
+        , terminal = "termite"
+        }
