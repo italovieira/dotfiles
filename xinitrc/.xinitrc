@@ -6,6 +6,7 @@ xset -b
 
 # Remap Caps Lock to Control
 # https://www.emacswiki.org/emacs/MovingTheCtrlKey
+# https://wiki.archlinux.org/index.php?title=Keyboard_configuration_in_Xorg&oldid=524623#Swapping_Caps_Lock_with_Left_Control
 setxkbmap -option ctrl:nocaps
 
 exec i3
