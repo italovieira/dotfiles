@@ -1,0 +1,38 @@
+# https://wiki.archlinux.org/index.php?title=Xbindkeys&oldid=547431#Configuration
+
+"xdotool key --clearmodifiers XF86AudioPrev"
+  Mod4 + F6 + Release
+
+"xdotool key --clearmodifiers XF86AudioPlay"
+  Mod4 + F7 + Release
+
+"xdotool key --clearmodifiers XF86AudioNext"
+  Mod4 + F8 + Release
+
+"xdotool key --clearmodifiers XF86AudioLowerVolume"
+  Mod4 + F10 + Release
+
+"xdotool key --clearmodifiers XF86AudioRaiseVolume"
+  Mod4 + F11 + Release
+
+"xdotool key --clearmodifiers XF86AudioMute"
+  Mod4 + F12 + Release
+
+
+"pactl set-sink-volume @DEFAULT_SINK@ +2%"
+  XF86AudioRaiseVolume
+
+"pactl set-sink-volume @DEFAULT_SINK@ -2%"
+  XF86AudioLowerVolume
+
+"pactl set-sink-mute @DEFAULT_SINK@ toggle"
+  XF86AudioMute
+
+"playerctl play-pause"
+  XF86AudioPlay
+
+"playerctl next"
+  XF86AudioNext
+
+"playerctl previous"
+  XF86AudioPrev
