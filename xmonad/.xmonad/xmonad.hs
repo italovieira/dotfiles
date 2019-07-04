@@ -15,4 +15,6 @@ main = do
         , layoutHook = smartBorders $ layoutHook desktopConfig
         , logHook = dynamicLogWithPP $ xmobarPP { ppOutput = hPutStrLn h }
         } `additionalKeys`
-        [ ((mod4Mask, xK_F1),  spawn "bluetoothctl power on") ]
+        [ ((mod4Mask, xK_p),  spawn "rofi -show")
+        , ((mod4Mask, xK_F1), spawn "bluetoothctl power on")
+        ]
