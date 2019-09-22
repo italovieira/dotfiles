@@ -14,4 +14,10 @@ redshift &
 # https://wiki.archlinux.org/index.php?title=Xbindkeys&oldid=547431#Making_changes_permanent
 xbindkeys
 
+LOCKER="i3lock -n -i $(grep -o "'.*'" $HOME/.fehbg | tr -d \')"
+
+# Autostart
+xautolock -time 7 -locker "$LOCKER" &
+xss-lock -- $LOCKER &
+
 exec xmonad
