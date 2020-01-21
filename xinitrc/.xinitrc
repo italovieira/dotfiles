@@ -16,8 +16,13 @@ xbindkeys
 
 LOCKER="i3lock -n -i $(grep -o "'.*'" $HOME/.fehbg | tr -d \')"
 
+# For start dunst
+# https://wiki.archlinux.org/index.php?title=Dunst&oldid=594925#Dunst_fails_to_start_via_systemd
+# https://github.com/dunst-project/dunst/issues/457#issuecomment-369606356
+systemctl --user import-environment DISPLAY
+
 # Autostart
-xautolock -time 7 -locker "$LOCKER" &
+xautolock -time 1 -corners 000- -locker "$LOCKER" &
 xss-lock -- $LOCKER &
 
 exec xmonad
