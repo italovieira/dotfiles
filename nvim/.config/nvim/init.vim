@@ -26,6 +26,7 @@ else
 
   Plug 'chriskempson/base16-vim'
   Plug 'morhetz/gruvbox'
+  Plug 'machakann/vim-sandwich'
   let g:gruvbox_italic = 1
 
   call plug#end()

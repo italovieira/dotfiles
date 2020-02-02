@@ -9,8 +9,6 @@ xset -b
 # https://wiki.archlinux.org/index.php?title=Keyboard_configuration_in_Xorg&oldid=524623#Swapping_Caps_Lock_with_Left_Control
 setxkbmap -option ctrl:nocaps
 
-redshift &
-
 # https://wiki.archlinux.org/index.php?title=Xbindkeys&oldid=547431#Making_changes_permanent
 xbindkeys
 
@@ -22,7 +20,7 @@ LOCKER="i3lock -n -i $(grep -o "'.*'" $HOME/.fehbg | tr -d \')"
 systemctl --user import-environment DISPLAY
 
 # Autostart
-xautolock -time 1 -corners 000- -locker "$LOCKER" &
+xautolock -time 7 -corners 000- -notify 10 -notifier "notify-send 'Locking in 10 seconds...'" -locker "$LOCKER" &
 xss-lock -- $LOCKER &
 
 exec xmonad
