@@ -23,4 +23,9 @@ systemctl --user import-environment DISPLAY
 xautolock -time 7 -corners 000- -notify 10 -notifier "notify-send 'Locking in 10 seconds...'" -locker "$LOCKER" &
 xss-lock -- $LOCKER &
 
+# For start gnome-polkit agent
+# https://bbs.archlinux.org/viewtopic.php?id=175895
+# https://wiki.archlinux.org/index.php?title=Polkit&oldid=595960#Authentication_agents
+/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
+
 exec xmonad
