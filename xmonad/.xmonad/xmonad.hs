@@ -17,4 +17,5 @@ main = do
         } `additionalKeys`
         [ ((mod4Mask, xK_p),  spawn "rofi -show")
         , ((mod4Mask, xK_F1), spawn "bluetoothctl power on")
+        , ((mod4Mask .|. shiftMask, xK_x),  spawn "loginctl lock-session")
         ]
