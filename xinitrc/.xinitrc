@@ -28,4 +28,9 @@ xss-lock -- $LOCKER &
 # https://wiki.archlinux.org/index.php?title=Polkit&oldid=595960#Authentication_agents
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 
+# Solve problem when creating keyring in Seahorse
+# https://bbs.archlinux.org/viewtopic.php?pid=1640822#p1640822
+# https://wiki.archlinux.org/index.php?title=Systemd/User&oldid=623708#DISPLAY_and_XAUTHORITY
+source /etc/X11/xinit/xinitrc.d/50-systemd-user.sh
+
 exec xmonad
