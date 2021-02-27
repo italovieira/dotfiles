@@ -1,0 +1,14 @@
+[Desktop Entry]
+
+Type=Application
+Version=1.0
+Name=Reboot
+Comment=Reboot the system
+
+Path=/usr/bin
+Exec=systemctl reboot
+Icon=systemctl
+Terminal=true
+
+Categories=System;
+X-Desktop-File-Install-Version=0.26

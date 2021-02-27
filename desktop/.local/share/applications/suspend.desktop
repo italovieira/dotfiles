@@ -1,0 +1,14 @@
+[Desktop Entry]
+
+Type=Application
+Version=1.0
+Name=Suspend
+Comment=Suspend the system
+
+Path=/usr/bin
+Exec=systemctl suspend
+Icon=systemctl
+Terminal=true
+
+Categories=System;
+X-Desktop-File-Install-Version=0.26
