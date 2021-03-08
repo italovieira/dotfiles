@@ -1,5 +1,7 @@
 [user]
 	name = Ítalo Vieira
-	email = italogv@hotmail.com
+	email = italogomesv@gmail.com
 [core]
-	editor = vim
+	editor = nvim
+[pull]
+	rebase = false
