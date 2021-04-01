@@ -33,4 +33,8 @@ xss-lock -- $LOCKER &
 # https://wiki.archlinux.org/index.php?title=Systemd/User&oldid=623708#DISPLAY_and_XAUTHORITY
 source /etc/X11/xinit/xinitrc.d/50-systemd-user.sh
 
+# https://wiki.archlinux.org/index.php?title=GNOME/Keyring&oldid=651567#xinitrc_method
+eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
+export SSH_AUTH_SOCK
+
 exec xmonad
