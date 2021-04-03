@@ -4,6 +4,7 @@ import XMonad.Util.EZConfig (additionalKeysP)
 import XMonad.Config.Desktop
 import XMonad.Layout.NoBorders (smartBorders)
 import XMonad.Hooks.DynamicLog
+import XMonad.Hooks.EwmhDesktops (ewmh)
 
 main = do
     spawn "~/.fehbg"
@@ -13,7 +14,7 @@ main = do
     let notifyScreenshot = " && notify-send 'Screenshot saved to clipboard'"
     let copyToClipboard = " | xclip -selection clipboard -t image/png -i"
 
-    xmonad $ desktopConfig
+    xmonad $ ewmh desktopConfig
         { modMask  = mod4Mask
         , terminal = "alacritty -e tmux"
         , layoutHook = smartBorders $ layoutHook desktopConfig
