@@ -5,6 +5,9 @@ import XMonad.Config.Desktop
 import XMonad.Layout.NoBorders (smartBorders)
 import XMonad.Hooks.DynamicLog
 import XMonad.Hooks.EwmhDesktops (ewmh)
+import XMonad.Actions.CopyWindow (copyToAll)
+
+myManageHook = className =? "firefox" <&&> appName =? "Toolkit" --> doFloat <+> doF copyToAll
 
 main = do
     spawn "~/.fehbg"
@@ -19,6 +22,7 @@ main = do
         , terminal = "alacritty -e tmux"
         , layoutHook = smartBorders $ layoutHook desktopConfig
         , logHook = dynamicLogWithPP $ xmobarPP { ppOutput = hPutStrLn h }
+        , manageHook = myManageHook <+> manageHook desktopConfig
         } `additionalKeysP`
         [ ("M-p", spawn "rofi -show")
         , ("M-<F1>", spawn "bluetoothctl power on && notify-send 'Bluetooth turned on'")
