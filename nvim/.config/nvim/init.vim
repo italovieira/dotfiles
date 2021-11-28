@@ -17,16 +17,15 @@ if !filereadable(s:f_plug)
 else
   call plug#begin('$HOME/.local/share/nvim/plugged')
 
-  Plug 'neomake/neomake'
   Plug 'junegunn/fzf', { 'do': './install --bin' }
   Plug 'junegunn/fzf.vim'
   Plug 'tpope/vim-fugitive'
   Plug 'tpope/vim-surround'
+  Plug 'tpope/vim-repeat'
   Plug 'mhinz/vim-signify'
 
   Plug 'chriskempson/base16-vim'
   Plug 'morhetz/gruvbox'
-  Plug 'machakann/vim-sandwich'
   let g:gruvbox_italic = 1
 
   Plug 'neovim/nvim-lspconfig'
@@ -55,12 +54,6 @@ if has('termguicolors')
   set termguicolors
 endif
 
-augroup Neomake
-  autocmd!
-  autocmd BufWritePost * silent! Neomake
-augroup END
-
-" LSP setup :h lspconfig-keybindings
 lua << EOF
 -- source remaining config
 require('lsp')
