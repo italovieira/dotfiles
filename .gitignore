@@ -2,3 +2,4 @@
 nvim/.netrwhist
 nvim/*~
 nvim/.config/nvim/*
+!nvim/.config/nvim/lua
