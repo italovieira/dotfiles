@@ -30,6 +30,10 @@ else
   let g:gruvbox_italic = 1
 
   Plug 'neovim/nvim-lspconfig'
+  Plug 'hrsh7th/nvim-cmp'
+  Plug 'hrsh7th/cmp-nvim-lsp'
+  Plug 'hrsh7th/cmp-buffer'
+  Plug 'hrsh7th/cmp-path'
   call plug#end()
 endif
 
@@ -60,4 +64,5 @@ augroup END
 lua << EOF
 -- source remaining config
 require('lsp')
+require('plugins')
 EOF
