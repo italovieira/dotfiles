@@ -6,6 +6,11 @@ return require('packer').startup(function()
   use('wbthomason/packer.nvim') -- packer can manage itself
 
   use('neovim/nvim-lspconfig')
+  use({
+    'nvim-treesitter/nvim-treesitter',
+    config = config('treesitter'),
+    run = 'TSUpdate',
+  })
 
   use('tpope/vim-fugitive')
   use('tpope/vim-surround')
