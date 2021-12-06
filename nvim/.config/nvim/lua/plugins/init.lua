@@ -12,6 +12,11 @@ return require('packer').startup(function()
     run = 'TSUpdate',
   })
 
+  use({
+    'nvim-telescope/telescope.nvim',
+    requires = 'nvim-lua/plenary.nvim',
+    config = config('telescope'),
+  })
   use('tpope/vim-fugitive')
   use('tpope/vim-surround')
   use('tpope/vim-repeat')
