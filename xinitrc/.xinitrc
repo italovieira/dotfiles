@@ -4,10 +4,9 @@ xrdb -I$HOME ~/.Xresources
 # https://wiki.archlinux.org/index.php/Disable_PC_speaker_beep#In_X
 xset -b
 
-# Remap Caps Lock to Control
-# https://www.emacswiki.org/emacs/MovingTheCtrlKey
-# https://wiki.archlinux.org/index.php?title=Keyboard_configuration_in_Xorg&oldid=524623#Swapping_Caps_Lock_with_Left_Control
-setxkbmap -option ctrl:nocaps
+# Remap keys
+# https://wiki.archlinux.org/index.php?title=Xmodmap&oldid=695597#Activating_the_custom_table
+[[ -f ~/.Xmodmap ]] && xmodmap ~/.Xmodmap
 
 # https://wiki.archlinux.org/index.php?title=Xbindkeys&oldid=547431#Making_changes_permanent
 xbindkeys

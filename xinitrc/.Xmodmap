@@ -1,0 +1,2 @@
+! remaps Esc to grave/tilde
+keycode 9 = dead_grave dead_tilde
