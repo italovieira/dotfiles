@@ -1,14 +1,8 @@
 [Desktop Entry]
-
 Type=Application
-Version=1.0
 Name=Poweroff
 Comment=Poweroff the system
 
-Path=/usr/bin
-Exec=systemctl poweroff
-Icon=systemctl
-Terminal=true
+Exec=sh -c "zenity --question --text 'Reboot?' && systemctl reboot"
 
 Categories=System;
-X-Desktop-File-Install-Version=0.26
