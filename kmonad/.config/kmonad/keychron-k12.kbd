@@ -1,0 +1,56 @@
+#| --------------------------------------------------------------------------
+                         Kmonad config for Keychron K12
+                           based on ansi 60% template
+
+The layer 'portuguese' needs XkbOptions "compose:ralt" to work properly.
+
+Used with `localectl set-x11-keymap us "" "" compose:ralt`.
+  -------------------------------------------------------------------------- |#
+
+(defcfg
+  input (device-file "/dev/keychron-k12") ;; symlink created using udev rule
+  output (uinput-sink "KMonad: Keychron K12")
+
+  fallthrough true
+  allow-cmd false
+)
+
+
+(defsrc
+  esc  1    2    3    4    5    6    7    8    9    0    -    =    bspc
+  tab  q    w    e    r    t    y    u    i    o    p    [    ]    \
+  caps a    s    d    f    g    h    j    k    l    ;    '    ret
+  lsft z    x    c    v    b    n    m    ,    .    /    rsft
+  lctl lmet lalt           spc            ralt rmet cmp  rctl
+)
+
+
+(defalias
+  xcp (tap-hold-next 500 esc (layer-toggle navigation))
+  pt  (layer-next portuguese)
+)
+
+
+(deflayer main
+  grv  _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  @xcp _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _              _              @pt  _    _    _
+)
+
+(deflayer portuguese
+  +`   _    _    _    _    _    +^   _    _    _    _    _    _    _
+  _    _    _    é    _    _    _    ú    í    ó    _    _    _    _
+  _    á    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    ç    _    _    _    _    _    _    _    _
+  _    _    _              _              _    _    _    _
+)
+
+(deflayer navigation
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    left down up   rght _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _              _              _    _    _    _
+)

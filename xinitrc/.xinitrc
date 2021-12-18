@@ -4,10 +4,6 @@ xrdb -I$HOME ~/.Xresources
 # https://wiki.archlinux.org/index.php/Disable_PC_speaker_beep#In_X
 xset -b
 
-# Remap keys
-# https://wiki.archlinux.org/index.php?title=Xmodmap&oldid=695597#Activating_the_custom_table
-[[ -f ~/.Xmodmap ]] && xmodmap ~/.Xmodmap
-
 # https://wiki.archlinux.org/index.php?title=Xbindkeys&oldid=547431#Making_changes_permanent
 xbindkeys
 
