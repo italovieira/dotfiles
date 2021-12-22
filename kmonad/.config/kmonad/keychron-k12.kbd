@@ -26,15 +26,15 @@ Used with `localectl set-x11-keymap us "" "" compose:ralt`.
 
 
 (defalias
-  xcp (tap-hold-next 500 esc (layer-toggle navigation))
-  pt  (layer-next portuguese)
+  esc (tap-hold-next 500 esc (layer-toggle nav))
+  pt  (around-next (layer-toggle portuguese))
 )
 
 
 (deflayer main
   grv  _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
-  @xcp _    _    _    _    _    _    _    _    _    _    _    _
+  @esc _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _              _              @pt  _    _    _
 )
@@ -42,12 +42,12 @@ Used with `localectl set-x11-keymap us "" "" compose:ralt`.
 (deflayer portuguese
   +`   _    _    _    _    _    +^   _    _    _    _    _    _    _
   _    _    _    é    _    _    _    ú    í    ó    _    _    _    _
-  _    á    _    _    _    _    _    _    _    _    _    _    _
+  _    á    _    _    _    _    _    _    _    _    _    +'   _
   _    _    _    ç    _    _    _    _    _    _    _    _
   _    _    _              _              _    _    _    _
 )
 
-(deflayer navigation
+(deflayer nav
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    left down up   rght _    _    _
