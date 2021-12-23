@@ -16,6 +16,14 @@ return require('packer').startup(function()
   use('tpope/vim-surround')
   use('tpope/vim-repeat')
   use('mhinz/vim-signify')
+  use({
+    'windwp/nvim-autopairs',
+    config = require('nvim-autopairs').setup({}),
+  })
+  use({
+    'numToStr/Comment.nvim',
+    config = require('Comment').setup(),
+  })
 
   use({
     'morhetz/gruvbox',
