@@ -6,6 +6,7 @@ set cursorline
 set textwidth=80
 set showcmd
 set list
+set undofile
 
 syntax enable
 set background=dark
