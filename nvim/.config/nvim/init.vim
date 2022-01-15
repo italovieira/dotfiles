@@ -8,6 +8,8 @@ set showcmd
 set list
 set undofile
 
+let mapleader=' '
+
 syntax enable
 set background=dark
 silent! colorscheme gruvbox
