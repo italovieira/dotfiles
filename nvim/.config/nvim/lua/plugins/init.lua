@@ -29,6 +29,14 @@ return require('packer').startup(function()
     'numToStr/Comment.nvim',
     config = require('Comment').setup(),
   })
+  use({
+    'mfussenegger/nvim-dap',
+    requires = {
+      'mfussenegger/nvim-dap-python',
+      'rcarriga/nvim-dap-ui',
+    },
+    config = config('dap'),
+  })
 
   use({
     'morhetz/gruvbox',
