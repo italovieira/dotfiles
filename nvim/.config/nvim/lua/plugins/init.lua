@@ -53,4 +53,12 @@ return require('packer').startup(function()
       'hrsh7th/cmp-path',
     },
   })
+  use({
+    'L3MON4D3/LuaSnip',
+    requires = {
+      'saadparwaiz1/cmp_luasnip',
+      'rafamadriz/friendly-snippets',
+  },
+    config = require('luasnip.loaders.from_vscode').load(),
+  })
 end)
