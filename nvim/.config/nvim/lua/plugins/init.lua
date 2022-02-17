@@ -61,4 +61,9 @@ return require('packer').startup(function()
   },
     config = require('luasnip.loaders.from_vscode').load(),
   })
+
+  use({
+    'jose-elias-alvarez/null-ls.nvim',
+    config = config('null_ls'),
+  })
 end)
