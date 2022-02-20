@@ -4,4 +4,8 @@
 [core]
 	editor = nvim
 [pull]
-	rebase = false
+	rebase = true
+[merge]
+	tool = nvimdiff
+[help]
+	autocorrect = prompt
