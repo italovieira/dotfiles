@@ -183,7 +183,7 @@ bar {
   swaybar_command waybar
 }
 
-include colorscheme
+include colors
 # Theming
 # Basic color configuration using the Base16 variables for windows and borders.
 # Property Name         Border  BG      Text    Indicator Child Border

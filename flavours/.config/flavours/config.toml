@@ -1,0 +1,18 @@
+[[item]]
+file = "~/.config/alacritty/colors.yml"
+template = "alacritty"
+rewrite=true
+
+[[item]]
+file = "~/.config/sway/colors"
+template = "sway"
+subtemplate = "colors"
+light = false
+hook = "swaymsg reload"
+rewrite=true
+
+[[item]]
+file = "~/.config/waybar/colors.css"
+template = "waybar"
+hook = "pkill -SIGRTMIN+7 waybar"
+rewrite = true
