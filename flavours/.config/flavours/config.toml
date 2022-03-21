@@ -16,3 +16,10 @@ file = "~/.config/waybar/colors.css"
 template = "waybar"
 hook = "pkill -SIGRTMIN+7 waybar"
 rewrite = true
+
+[[item]]
+file= "~/.tmux/theme.conf"
+template = "tmux"
+subtemplate = "custom"
+hook = "tmux source-file ~/.tmux.conf"
+rewrite = true
