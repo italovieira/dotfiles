@@ -1,6 +1,8 @@
-local u = require('utils')
+require('telescope').load_extension('fzf')
 
-u.nmap('<leader>ff', '<cmd>Telescope find_files<cr>')
-u.nmap('<leader>fg', '<cmd>Telescope live_grep<cr>')
-u.nmap('<leader>fb', '<cmd>Telescope buffers<cr>')
-u.nmap('<leader>fh', '<cmd>Telescope help_tags<cr>')
+telescope = require('telescope.builtin')
+
+vim.keymap.set('n', '<leader>ff', telescope.find_files)
+vim.keymap.set('n', '<leader>fg', telescope.live_grep)
+vim.keymap.set('n', '<leader>fb', telescope.buffers)
+vim.keymap.set('n', '<leader>fh', telescope.help_tags)
