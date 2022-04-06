@@ -1,9 +1,21 @@
 require('dap-python').setup('~/.venvs/debugpy/bin/python')
 
+local dap = require('dap')
+local dapui = require('dapui')
 local u = require('utils')
 
+dap.listeners.after.event_initialized['dapui_config'] = function()
+  dapui.open()
+end
+dap.listeners.before.event_terminated['dapui_config'] = function()
+  dapui.close()
+end
+dap.listeners.before.event_exited['dapui_config'] = function()
+  dapui.close()
+end
+
 u.nmap('<leader>dc', '<cmd>lua require("dap").continue()<cr>')
-u.nmap('<leader>ds', '<cmd>lua require("dap").stop()<cr>')
+u.nmap('<leader>ds', '<cmd>lua require("dap").close()<cr>')
 u.nmap('<leader>dl', '<cmd>lua require("dap").run_last()<cr>')
 
 u.nmap('<leader>do', '<cmd>lua require("dap").step_over()<cr>')
