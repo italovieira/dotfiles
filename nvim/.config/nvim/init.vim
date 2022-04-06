@@ -9,6 +9,7 @@ set list
 set undofile
 
 let mapleader=' '
+let maplocalleader=' '
 
 syntax enable
 set background=dark
