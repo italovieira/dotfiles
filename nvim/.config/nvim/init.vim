@@ -7,6 +7,7 @@ set textwidth=80
 set showcmd
 set list
 set undofile
+set laststatus=3
 
 let mapleader=' '
 let maplocalleader=' '
