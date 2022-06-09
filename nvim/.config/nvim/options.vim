@@ -7,6 +7,8 @@ set textwidth=80
 set showcmd
 set list
 set undofile
+set breakindent
+set linebreak
 if has('termguicolors')
   set termguicolors
 endif
