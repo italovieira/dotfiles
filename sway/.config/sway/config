@@ -57,6 +57,11 @@ floating_modifier $mod normal
 # Reload the configuration file
 bindsym $mod+Shift+r reload
 
+# Screenshots
+bindsym Print exec grim - | wl-copy && notify-send 'Screenshot copied to clipboard' # whole screen
+bindsym Shift+Print exec grim -g "$(slurp)" - | wl-copy # select a region
+bindsym Ctrl+Print exec grim -g "$(swaymsg -t get_tree | jq -j '.. | select(.type?) | select(.focused).rect | "\(.x),\(.y) \(.width)x\(.height)"')" - | wl-copy # focused window
+
 # Exit sway (logs you out of your Wayland session)
 bindsym $mod+Shift+q exec swaynag -t warning \
   -m 'Do you really want to exit sway?' \
@@ -194,4 +199,13 @@ client.urgent           $base08 $base08 $base00 $base08 $base08
 client.placeholder      $base00 $base00 $base05 $base00 $base00
 client.background       $base07
 
+# Floating windows
+for_window [app_id="pavucontrol"] floating enable
+
+# https://stackoverflow.com/a/68787102/9474253
+for_window [class=".*"] inhibit_idle fullscreen
+for_window [app_id=".*"] inhibit_idle fullscreen
+
 include /etc/sway/config.d/*
+
+exec dex --autostart --environment sway
