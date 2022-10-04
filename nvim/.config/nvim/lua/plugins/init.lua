@@ -60,8 +60,8 @@ return require('packer').startup(function()
     requires = {
       'saadparwaiz1/cmp_luasnip',
       'rafamadriz/friendly-snippets',
-  },
-    config = require('luasnip.loaders.from_vscode').load(),
+    },
+    config = config('luasnip')
   })
 
   use({
