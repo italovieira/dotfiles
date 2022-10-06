@@ -8,10 +8,11 @@ cmp.setup({
   },
 
   mapping = cmp.mapping.preset.insert({
-    ['<C-y>'] = cmp.mapping.confirm({select = true}),
-    ['<C-Space>'] = cmp.mapping.complete(),
-    ['<C-d>'] = cmp.mapping.scroll_docs(-4),
-    ['<C-f>'] = cmp.mapping.scroll_docs(4),
+    ['<c-b>'] = cmp.mapping.scroll_docs(-4),
+    ['<c-f>'] = cmp.mapping.scroll_docs(4),
+    ['<c-e>'] = cmp.mapping.abort(),
+    ['<c-y>'] = cmp.mapping.confirm({select = true}),
+    ['<c-space>'] = cmp.mapping.complete(),
   }),
 
   sources = cmp.config.sources({

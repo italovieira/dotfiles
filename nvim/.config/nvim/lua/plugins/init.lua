@@ -16,13 +16,20 @@ return require('packer').startup(function()
 
   use({
     'nvim-telescope/telescope.nvim',
-    requires = 'nvim-lua/plenary.nvim',
+    requires = {
+      'nvim-lua/plenary.nvim',
+      {'nvim-telescope/telescope-fzf-native.nvim', run = 'make'}
+    },
     config = config('telescope'),
   })
   use('tpope/vim-fugitive')
   use('tpope/vim-surround')
   use('tpope/vim-repeat')
-  use('mhinz/vim-signify')
+  use({
+    'lewis6991/gitsigns.nvim',
+    requires = 'nvim-lua/plenary.nvim',
+    config = require('gitsigns').setup(),
+  })
   use({
     'windwp/nvim-autopairs',
     config = require('nvim-autopairs').setup({}),
@@ -67,5 +74,11 @@ return require('packer').startup(function()
   use({
     'jose-elias-alvarez/null-ls.nvim',
     config = config('null_ls'),
+  })
+
+  use('andymass/vim-matchup')
+  use({
+    'folke/which-key.nvim',
+    config = require('which-key').setup({})
   })
 end)
