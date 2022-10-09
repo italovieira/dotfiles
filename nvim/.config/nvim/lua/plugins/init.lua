@@ -81,4 +81,9 @@ return require('packer').startup(function()
     'folke/which-key.nvim',
     config = require('which-key').setup({})
   })
+
+  use({
+    'nvim-neorg/neorg',
+    config = config('neorg')
+  })
 end)

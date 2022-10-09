@@ -34,3 +34,13 @@ cmp.setup({
     end
   }
 })
+
+cmp.setup.filetype('norg', {
+  sources = cmp.config.sources({
+    {name = 'neorg'},
+    {name = 'luasnip'},
+  }, {
+    {name = 'buffer'},
+    {name = 'path'},
+  }),
+})
