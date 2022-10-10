@@ -1,2 +1,4 @@
 tags
 Session.vim
+*.txt
+*.norg
