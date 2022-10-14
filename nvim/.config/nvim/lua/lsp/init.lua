@@ -53,3 +53,5 @@ for _, lsp in ipairs(servers) do
 end
 
 require('lsp.diagnostic')
+
+return {on_attach=on_attach}
