@@ -1,6 +1,31 @@
-return require('packer').startup(function()
+download_packer = function()
+  if vim.fn.input('Install Packer (y for yes)? ') ~= 'y' then
+    return
+  end
+
+  local packer_path = vim.fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
+
+  vim.notify('Installing Packer...')
+
+  vim.fn.system({
+    "git",
+    "clone",
+    "https://github.com/wbthomason/packer.nvim",
+    packer_path,
+  })
+
+  vim.notify('...done. Need restart now!')
+end
+
+local ok, packer = pcall(require, 'packer')
+if not ok then
+  download_packer()
+  return
+end
+
+return packer.startup(function()
   local config = function(name)
-    require(string.format('plugins.%s', name))
+      return string.format('require("plugins.%s")', name)
   end
 
   use('wbthomason/packer.nvim') -- packer can manage itself
@@ -12,7 +37,10 @@ return require('packer').startup(function()
     config = config('treesitter'),
     run = 'TSUpdate',
   })
-  use('nvim-treesitter/nvim-treesitter-textobjects')
+  use({
+    'nvim-treesitter/nvim-treesitter-textobjects',
+    after = 'nvim-treesitter',
+  })
 
   use({
     'nvim-telescope/telescope.nvim',
@@ -28,15 +56,21 @@ return require('packer').startup(function()
   use({
     'lewis6991/gitsigns.nvim',
     requires = 'nvim-lua/plenary.nvim',
-    config = require('gitsigns').setup(),
+    config = function()
+      require('gitsigns').setup()
+    end,
   })
   use({
     'windwp/nvim-autopairs',
-    config = require('nvim-autopairs').setup({}),
+    config = function()
+      require('nvim-autopairs').setup({})
+    end,
   })
   use({
     'numToStr/Comment.nvim',
-    config = require('Comment').setup(),
+    config = function()
+      require('Comment').setup()
+    end,
   })
   use({
     'mfussenegger/nvim-dap',
@@ -79,7 +113,9 @@ return require('packer').startup(function()
   use('andymass/vim-matchup')
   use({
     'folke/which-key.nvim',
-    config = require('which-key').setup({})
+    config = function()
+      require('which-key').setup({})
+    end,
   })
 
   use({
