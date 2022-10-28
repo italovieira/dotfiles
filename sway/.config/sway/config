@@ -13,7 +13,7 @@ set $right l
 # Preferred terminal emulator
 set $term alacritty -e tmux
 # Preferred application launcher
-set $menu wofi | xargs swaymsg exec --
+set $menu rofi -show
 
 # Default wallpaper
 output * bg ~/Pictures/wallpapers/.default fill
