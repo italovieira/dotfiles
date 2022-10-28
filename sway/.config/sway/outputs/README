@@ -1,0 +1,3 @@
+Create a symlink from desired outputs config file to './.current'
+
+If the desired configuration is the default from sway make './current' excluded.

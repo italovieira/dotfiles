@@ -15,6 +15,9 @@ set $term alacritty -e tmux
 # Preferred application launcher
 set $menu rofi -show
 
+# See outputs/README
+include outputs/.current
+
 # Default wallpaper
 output * bg ~/Pictures/wallpapers/.default fill
 

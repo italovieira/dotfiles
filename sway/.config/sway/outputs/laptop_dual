@@ -1,0 +1,3 @@
+# https://github.com/swaywm/sway/wiki/Home/5ce9fb0a72d2fd5fb08bcc4e455407c31e10976d#multihead
+output HDMI-A-1 pos 0 0 res 1920x1080
+output eDP-1 pos 1920 156 res 1355x768
