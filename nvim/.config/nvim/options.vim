@@ -12,4 +12,3 @@ set linebreak
 if has('termguicolors')
   set termguicolors
 endif
-set laststatus=3
