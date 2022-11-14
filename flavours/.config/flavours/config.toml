@@ -9,7 +9,7 @@ template = "sway"
 subtemplate = "colors"
 light = false
 hook = "swaymsg reload"
-rewrite=true
+rewrite = true
 
 [[item]]
 file = "~/.config/waybar/colors.css"
@@ -18,8 +18,15 @@ hook = "pkill -SIGRTMIN+7 waybar"
 rewrite = true
 
 [[item]]
-file= "~/.tmux/theme.conf"
+file = "~/.tmux/theme.conf"
 template = "tmux"
 subtemplate = "custom"
 hook = "tmux source-file ~/.tmux.conf"
+rewrite = true
+
+[[item]]
+file = "~/.config/dunst/dunstrc.d/theme.conf"
+template = "dunst"
+subtemplate = "custom"
+hook = "pkill dunst"
 rewrite = true
