@@ -58,6 +58,7 @@ window#waybar.chromium {
 #mpd {
     padding: 0 6px;
     margin: 0 3px;
+    color: @base06;
 }
 
 #window,
