@@ -3,4 +3,5 @@ configuration {
   combi-modi:    "window,drun,ssh";
   font:          "hack 10";
 }
-@theme "gruvbox-dark"
+
+@import "colors.rasi"

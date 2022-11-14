@@ -1,7 +1,7 @@
 [[item]]
 file = "~/.config/alacritty/colors.yml"
 template = "alacritty"
-rewrite=true
+rewrite = true
 
 [[item]]
 file = "~/.config/sway/colors"
@@ -27,6 +27,10 @@ rewrite = true
 [[item]]
 file = "~/.config/dunst/dunstrc.d/theme.conf"
 template = "dunst"
-subtemplate = "custom"
 hook = "pkill dunst"
+rewrite = true
+
+[[item]]
+file= "~/.config/rofi/colors.rasi"
+template = "rofi"
 rewrite = true
