@@ -20,4 +20,4 @@ require('plugins')
 require('lsp')
 EOF
 
-runtime extras.vim
+runtime extra.vim
