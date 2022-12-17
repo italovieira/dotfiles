@@ -35,7 +35,7 @@ return packer.startup(function()
   use({
     'nvim-treesitter/nvim-treesitter',
     config = config('treesitter'),
-    run = 'TSUpdate',
+    run = ':TSUpdate',
   })
   use({
     'nvim-treesitter/nvim-treesitter-textobjects',
