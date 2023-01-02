@@ -9,11 +9,6 @@ require('neorg').setup({
         },
       },
     },
-    ['core.gtd.base'] = {
-      config = {
-        workspace = 'work',
-      },
-    },
     ['core.norg.concealer'] = {},
     ['core.norg.completion'] = {
       config = {
