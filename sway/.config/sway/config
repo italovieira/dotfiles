@@ -204,6 +204,11 @@ client.background       $base07
 
 # Floating windows
 for_window [app_id="pavucontrol"] floating enable
+for_window [app_id="firefox" \
+            title="Picture-in-Picture"] floating enable, \
+                                        sticky enable, \
+                                        resize set width 640 height 360, \
+                                        move position 1250 10
 
 # https://stackoverflow.com/a/68787102/9474253
 for_window [class=".*"] inhibit_idle fullscreen
