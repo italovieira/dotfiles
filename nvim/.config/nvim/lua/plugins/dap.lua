@@ -1,5 +1,3 @@
-require('dap-python').setup('~/.venvs/debugpy/bin/python')
-
 local dap = require('dap')
 local dapui = require('dapui')
 local widgets = require('dap.ui.widgets')
@@ -35,3 +33,6 @@ vim.keymap.set('n', '<leader>d?', function() widgets.centered_float(widgets.scop
 
 dapui.setup()
 vim.keymap.set('n', '<leader>du', dapui.toggle)
+
+require('nvim-dap-virtual-text').setup()
+require('dap-python').setup('~/.venvs/debugpy/bin/python')

@@ -77,6 +77,7 @@ return packer.startup(function()
     requires = {
       'mfussenegger/nvim-dap-python',
       'rcarriga/nvim-dap-ui',
+      'theHamsta/nvim-dap-virtual-text',
     },
     config = config('dap'),
   })
