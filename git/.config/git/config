@@ -5,9 +5,18 @@
 	editor = nvim
 [pull]
 	rebase = true
-[merge]
+[diff]
 	tool = nvimdiff
+	colorMoved = default
+[difftool]
+	trustExitCode = yes
+[merge]
+	tool = nvimdiff2
+	conflictstyle = zdiff3
+[mergetool]
+	prompt = no
+	keepBackup = no
 [help]
 	autocorrect = prompt
 [includeIf "gitdir:~/work/"]
-    path = ~/work/.gitconfig
+	path = ~/work/.gitconfig
