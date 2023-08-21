@@ -3,14 +3,14 @@ download_packer = function()
     return
   end
 
-  local packer_path = vim.fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
+  local packer_path = vim.fn.stdpath('data') .. '/site/pack/packer/start/packer.nvim'
 
   vim.notify('Installing Packer...')
 
   vim.fn.system({
-    "git",
-    "clone",
-    "https://github.com/wbthomason/packer.nvim",
+    'git',
+    'clone',
+    'https://github.com/wbthomason/packer.nvim',
     packer_path,
   })
 
@@ -25,12 +25,21 @@ end
 
 return packer.startup(function()
   local config = function(name)
-      return string.format('require("plugins.%s")', name)
+    return string.format('require("plugins.%s")', name)
   end
 
   use('wbthomason/packer.nvim') -- packer can manage itself
 
   use('neovim/nvim-lspconfig')
+
+  use({
+    'williamboman/mason.nvim',
+    'williamboman/mason-lspconfig.nvim',
+    config = function()
+      require('mason').setup()
+      require('mason-lspconfig').setup()
+    end,
+  })
 
   use({
     'nvim-treesitter/nvim-treesitter',
@@ -46,7 +55,7 @@ return packer.startup(function()
     'nvim-telescope/telescope.nvim',
     requires = {
       'nvim-lua/plenary.nvim',
-      {'nvim-telescope/telescope-fzf-native.nvim', run = 'make'}
+      { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' },
     },
     config = config('telescope'),
   })
@@ -103,7 +112,7 @@ return packer.startup(function()
       'saadparwaiz1/cmp_luasnip',
       'rafamadriz/friendly-snippets',
     },
-    config = config('luasnip')
+    config = config('luasnip'),
   })
 
   use({
@@ -121,6 +130,6 @@ return packer.startup(function()
 
   use({
     'nvim-neorg/neorg',
-    config = config('neorg')
+    config = config('neorg'),
   })
 end)

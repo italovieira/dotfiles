@@ -7,22 +7,15 @@ end
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
 local on_attach = function(client, bufnr)
-  local function buf_set_keymap(...)
-    vim.api.nvim_buf_set_keymap(bufnr, ...)
-  end
-  local function buf_set_option(...)
-    vim.api.nvim_buf_set_option(bufnr, ...)
-  end
-
   -- Enable completion triggered by <c-x><c-o>
-  buf_set_option('omnifunc', 'v:lua.vim.lsp.omnifunc')
+  vim.bo[bufnr].omnifunc = 'v:lua.vim.lsp.omnifunc'
 
   -- Mappings.
-  local opts = {buffer = bufnr, silent = true}
+  local opts = { buffer = bufnr, silent = true }
 
   -- See `:help vim.lsp.*` for documentation on any of the below functions
-  vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
   vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, opts)
+  vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
   vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts)
   vim.keymap.set('n', '<space>gi', vim.lsp.buf.implementation, opts)
   vim.keymap.set('n', '<c-k>', vim.lsp.buf.signature_help, opts)
@@ -31,19 +24,14 @@ local on_attach = function(client, bufnr)
   vim.keymap.set('n', '<space>wl', function()
     print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
   end, opts)
-  vim.keymap.set('n', '<space>d', vim.lsp.buf.type_definition, opts)
+  vim.keymap.set('n', '<space>D', vim.lsp.buf.type_definition, opts)
   vim.keymap.set('n', '<space>rn', vim.lsp.buf.rename, opts)
-  vim.keymap.set('n', '<space>ca', vim.lsp.buf.code_action, opts)
+  vim.keymap.set({ 'n', 'v' }, '<space>ca', vim.lsp.buf.code_action, opts)
   vim.keymap.set('n', 'gr', vim.lsp.buf.references, opts)
-  vim.keymap.set('n', '<space>e', vim.diagnostic.open_float, opts)
-  vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, opts)
-  vim.keymap.set('n', ']d', vim.diagnostic.goto_next, opts)
-  vim.keymap.set('n', '<space>q', vim.diagnostic.setloclist, opts)
   vim.keymap.set('n', '<space>f', function()
-    vim.lsp.buf.format({async = true})
+    vim.lsp.buf.format({ async = true })
   end, opts)
 end
-
 
 -- Define nvim-cmp capabilities
 local capabilities = vim.lsp.protocol.make_client_capabilities()
@@ -51,7 +39,7 @@ capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
 
 -- Use a loop to conveniently call 'setup' on multiple servers and
 -- map buffer local keybindings when the language server attaches
-local servers = {'pyright'}
+local servers = { 'pyright', 'tsserver', 'lua_ls' }
 for _, lsp in ipairs(servers) do
   nvim_lsp[lsp].setup({
     on_attach = on_attach,
@@ -61,4 +49,4 @@ end
 
 require('lsp.diagnostic')
 
-return {on_attach=on_attach}
+return { on_attach = on_attach }

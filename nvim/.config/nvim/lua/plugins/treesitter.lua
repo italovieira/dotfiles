@@ -1,12 +1,18 @@
-require('nvim-treesitter.configs').setup {
+require('nvim-treesitter.configs').setup({
   highlight = {
     enable = true,
   },
   indent = {
-    enable = true
+    enable = true,
   },
   incremental_selection = {
     enable = true,
+
+    keymaps = {
+      init_selection = '<cr>',
+      node_incremental = '<cr>',
+      node_decremental = '<bs>',
+    },
   },
 
   textobjects = {
@@ -48,4 +54,4 @@ require('nvim-treesitter.configs').setup {
       },
     },
   },
-}
+})

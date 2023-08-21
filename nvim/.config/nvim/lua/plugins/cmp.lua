@@ -11,16 +11,16 @@ cmp.setup({
     ['<c-b>'] = cmp.mapping.scroll_docs(-4),
     ['<c-f>'] = cmp.mapping.scroll_docs(4),
     ['<c-e>'] = cmp.mapping.abort(),
-    ['<c-y>'] = cmp.mapping.confirm({select = true}),
+    ['<c-y>'] = cmp.mapping.confirm({ select = true }),
     ['<c-space>'] = cmp.mapping.complete(),
   }),
 
   sources = cmp.config.sources({
-    {name = 'nvim_lsp'},
-    {name = 'luasnip'},
+    { name = 'nvim_lsp' },
+    { name = 'luasnip' },
   }, {
-    {name = 'buffer'},
-    {name = 'path'},
+    { name = 'buffer' },
+    { name = 'path' },
   }),
 
   formatting = {
@@ -31,16 +31,16 @@ cmp.setup({
         path = '[path]',
       })[entry.source.name]
       return vim_item
-    end
-  }
+    end,
+  },
 })
 
 cmp.setup.filetype('norg', {
   sources = cmp.config.sources({
-    {name = 'neorg'},
-    {name = 'luasnip'},
+    { name = 'neorg' },
+    { name = 'luasnip' },
   }, {
-    {name = 'buffer'},
-    {name = 'path'},
+    { name = 'buffer' },
+    { name = 'path' },
   }),
 })
