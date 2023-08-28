@@ -9,6 +9,7 @@ set list
 set undofile
 set breakindent
 set linebreak
+set undolevels=10000
 if has('termguicolors')
   set termguicolors
 endif
