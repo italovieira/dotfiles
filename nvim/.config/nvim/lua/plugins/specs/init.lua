@@ -41,6 +41,13 @@ return {
     },
     config = config('telescope'),
   },
+
+  {
+    'stevearc/oil.nvim',
+    opts = {},
+    dependencies = { 'nvim-tree/nvim-web-devicons' },
+  },
+
   'tpope/vim-fugitive',
   'tpope/vim-surround',
   'tpope/vim-repeat',
@@ -121,7 +128,6 @@ return {
 
   {
     'nvim-neorg/neorg',
-    ft = 'norg',
     config = config('neorg'),
   },
 
