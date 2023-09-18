@@ -3,4 +3,4 @@ let mapleader=' '
 let maplocalleader=' '
 
 tnoremap <esc> <c-\><c-n>
-nnoremap - :edit %:h<cr>
+nnoremap <expr> - empty(bufname()) ? ':edit .<cr>' : ':edit %:h<cr>'
