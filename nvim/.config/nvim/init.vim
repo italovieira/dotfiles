@@ -15,9 +15,7 @@ if has('autocmd') && exists('+omnifunc')
         \ endif
 endif
 
-lua << EOF
-require('plugins')
-require('lsp')
-EOF
+lua require('diagnostic')
+lua require('plugins')
 
 runtime extra.vim

@@ -1,7 +1,4 @@
-local ok, lspconfig = pcall(require, 'lspconfig')
-if not ok then
-  return
-end
+local lspconfig = require('lspconfig')
 
 -- :h lspconfig-keybindings
 -- Use an on_attach function to only map the following keys
@@ -62,7 +59,3 @@ for server, settings in pairs(servers) do
     settings = settings,
   })
 end
-
-require('lsp.diagnostic')
-
-return { on_attach = on_attach }
