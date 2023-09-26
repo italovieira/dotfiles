@@ -56,4 +56,17 @@ return {
     },
     config = load_config('dap'),
   },
+
+  {
+    'tpope/vim-dadbod',
+    dependencies = {
+      'kristijanhusak/vim-dadbod-ui',
+      {
+        'kristijanhusak/vim-dadbod-completion',
+        dependencies = 'nvim-cmp',
+      },
+    },
+  },
+
+  { 'folke/neodev.nvim', opts = {} },
 }

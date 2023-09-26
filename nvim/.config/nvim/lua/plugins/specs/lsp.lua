@@ -5,6 +5,7 @@ return {
     'neovim/nvim-lspconfig',
     lazy = true,
     config = load_config('lspconfig'),
+    dependencies = { 'folke/neodev.nvim' },
   },
 
   {

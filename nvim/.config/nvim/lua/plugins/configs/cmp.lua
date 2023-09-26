@@ -29,7 +29,7 @@ cmp.setup({
         buffer = '[buf]',
         nvim_lsp = '[LSP]',
         path = '[path]',
-      })[entry.source.name]
+      })[entry.source.name] or vim_item.menu
       return vim_item
     end,
   },
@@ -42,5 +42,11 @@ cmp.setup.filetype('norg', {
   }, {
     { name = 'buffer' },
     { name = 'path' },
+  }),
+})
+
+cmp.setup.filetype({ 'sql', 'mysql', 'plsql' }, {
+  sources = cmp.config.sources({
+    { name = 'vim-dadbod-completion' },
   }),
 })
