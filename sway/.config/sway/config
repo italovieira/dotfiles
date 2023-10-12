@@ -214,6 +214,11 @@ for_window [app_id="firefox" \
 for_window [class=".*"] inhibit_idle fullscreen
 for_window [app_id=".*"] inhibit_idle fullscreen
 
-include /etc/sway/config.d/*
+bindsym XF86AudioPlay exec playerctl play-pause
+bindsym XF86AudioPause exec playerctl play-pause
+bindsym XF86AudioNext exec playerctl next
+bindsym XF86AudioPrev exec playerctl previous
 
 exec dex --autostart --environment sway
+
+include /etc/sway/config.d/*
