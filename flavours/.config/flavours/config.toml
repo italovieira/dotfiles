@@ -1,5 +1,5 @@
 [[item]]
-file = "~/.config/alacritty/colors.yml"
+file = "~/.config/alacritty/colors.toml"
 template = "alacritty"
 rewrite = true
 
