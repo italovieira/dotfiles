@@ -1,0 +1,35 @@
+[[items]]
+path = "https://github.com/aarowill/base16-alacritty"
+name = "base16-alacritty"
+themes-dir = "colors"
+hook = "cp %f ~/.config/alacritty/colors.toml"
+
+[[items]]
+path = "https://github.com/rkubosz/base16-sway"
+name = "base16-sway"
+themes-dir = "themes"
+hook = "cp %f ~/.config/sway/colors && swaymsg reload"
+
+[[items]]
+path = "https://github.com/mnussbaum/base16-waybar"
+name = "base16-waybar"
+themes-dir = "colors"
+hook = "cp %f ~/.config/waybar/colors.css && pkill -SIGRTMIN+7 waybar"
+
+[[items]]
+path = "~/.config/tinted-theming/.custom-templates/tmux"
+name = "custom-tmux"
+themes-dir = "colors"
+hook = "cp %f ~/.tmux/theme.conf && tmux source-file ~/.tmux.conf"
+
+[[items]]
+path = "https://github.com/tinted-theming/base16-dunst"
+name = "base16-dunst"
+themes-dir = "themes"
+hook = "cp %f ~/.config/dunst/dunstrc.d/theme.conf && pkill dunst"
+
+[[items]]
+path = "https://github.com/tinted-theming/base16-rofi"
+name = "base16-rofi"
+themes-dir = "colors"
+hook = "cp %f ~/.config/rofi/colors.rasi"
