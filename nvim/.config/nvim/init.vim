@@ -1,9 +1,13 @@
 runtime options.vim
 runtime maps.vim
 
+lua require('plugins')
+lua require('diagnostic')
+
+silent! colorscheme gruvbox
+
 syntax enable
 set background=dark
-silent! colorscheme gruvbox
 
 filetype plugin indent on
 
@@ -14,8 +18,5 @@ if has('autocmd') && exists('+omnifunc')
         \  setlocal omnifunc=syntaxcomplete#Complete |
         \ endif
 endif
-
-lua require('diagnostic')
-lua require('plugins')
 
 runtime extra.vim
