@@ -12,6 +12,10 @@ obsidian.setup({
     },
   },
 
+  daily_notes = {
+    folder = 'daily',
+  },
+
   completion = {
     nvim_cmp = true,
   },
@@ -36,6 +40,7 @@ obsidian.setup({
       return title
     end
 
+    local suffix = ''
     for _ = 1, 4 do
       suffix = suffix .. string.char(math.random(65, 90))
     end
