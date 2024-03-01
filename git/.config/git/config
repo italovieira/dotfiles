@@ -18,5 +18,7 @@
 	keepBackup = no
 [help]
 	autocorrect = prompt
+[rerere]
+	enabled = true
 [includeIf "gitdir:~/work/"]
 	path = ~/work/.gitconfig
