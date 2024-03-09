@@ -7,19 +7,6 @@ return {
   },
 
   {
-    'windwp/nvim-autopairs',
-    config = function()
-      require('nvim-autopairs').setup({})
-    end,
-  },
-  {
-    'numToStr/Comment.nvim',
-    config = function()
-      require('Comment').setup()
-    end,
-  },
-
-  {
     {
       'hrsh7th/nvim-cmp',
       config = load_config('cmp'),

@@ -34,23 +34,6 @@ local on_attach = function(client, bufnr)
       vim.lsp.inlay_hint(0, nil)
     end, { desc = 'Toggle inlay hints' })
   end
-
-  -- https://github.com/nvim-lua/kickstart.nvim/blob/38828dcaf7c140902fedeaa75b017bf968400bb0/init.lua#L497-L513
-  -- The following two autocommands are used to highlight references of the
-  -- word under your cursor when your cursor rests there for a little while.
-  --    See `:help CursorHold` for information about when this is executed
-  --
-  -- When you move your cursor, the highlights will be cleared (the second autocommand).
-  if client and client.server_capabilities.documentHighlightProvider then
-    vim.api.nvim_create_autocmd({ 'CursorHold', 'CursorHoldI' }, {
-      buffer = bufnr,
-      callback = vim.lsp.buf.document_highlight,
-    })
-    vim.api.nvim_create_autocmd({ 'CursorMoved', 'CursorMovedI' }, {
-      buffer = bufnr,
-      callback = vim.lsp.buf.clear_references,
-    })
-  end
 end
 
 -- Define nvim-cmp capabilities
