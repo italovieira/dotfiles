@@ -1,45 +1,58 @@
-/* inspired in https://www.reddit.com/r/unixporn/comments/crkjqm/sway_space_gruvbox */
-
-* {
-    border: none;
-    border-radius: 0;
-    /* `otf-font-awesome` is required to be installed for icons */
-    font-family: Source Code Pro, sans-serif;
-    font-size: 13px;
-    min-height: 0;
-}
-
+/* edited from default config https://github.com/Alexays/Waybar/blob/4c46d7d245a6c06644d6a0e8857f7140556202ce/resources/style.css */
 @import "colors.css";
 
+* {
+  /* `otf-font-awesome` is required to be installed for icons */
+  font-family: FontAwesome, Source Code Pro, Roboto, Helvetica, Arial, sans-serif;
+  font-size: 13px;
+  border-radius: 10px; /* Adjust this to make the elements courners rounded  */
+}
+
 window#waybar {
-    background-color: @base00;
-    border-bottom: 3px solid transparent;
-    color: @base06;
-    transition-property: background-color;
-    transition-duration: .5s;
+  background-color: transparent;
+  color: @base05;
+  transition-property: background-color;
+  transition-duration: .5s;
 }
 
-window#waybar.termite {
-    background-color: #3F3F3F;
+window#waybar.hidden {
+  opacity: 0.2;
 }
 
-window#waybar.chromium {
-    background-color: #000000;
-    border: none;
+/* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
+button:hover {
+  background: inherit;
+  box-shadow: inset 0 -2px @base04;
 }
 
 #workspaces button {
-    padding: 0 5px;
-    background-color: transparent;
-    color: @base06;
-    /* Use box-shadow instead of border so the text isn't offset */
-    box-shadow: inset 0 -3px transparent;
+  padding: 0 5px;
+  background-color: transparent;
+  color: @base05;
 }
 
-#workspaces button.focused {
-    background: @base09;
-    box-shadow: inset 0 -3px @base09;
-    color: @base01;
+/* Disable the not appealing hover effect */
+/* https://github.com/Alexays/Waybar/issues/60#issue-374460615 */
+#workspaces button:hover {
+  box-shadow: inherit;
+  text-shadow: inherit;
+}
+
+#workspaces button.active {
+  background-color: @base02;
+  color: @base06;
+}
+
+#workspaces button.urgent {
+  background-color: @base08;
+  color: @base06;
+}
+
+#submap {
+  background-color: @base03;
+  color: @base06;
+  padding-left: 5px;
+  padding-right: 5px;
 }
 
 #clock,
@@ -51,48 +64,136 @@ window#waybar.chromium {
 #backlight,
 #network,
 #pulseaudio,
-#custom-media,
 #tray,
-#mode,
+#submaps,
 #idle_inhibitor,
-#mpd {
-    padding: 0 6px;
-    margin: 0 3px;
-    color: @base06;
+#power-profiles-daemon {
+  padding: 0 10px;
 }
 
-#window,
-#workspaces {
-    margin: 0 4px;
+#window {
+  margin: 0 4px;
 }
 
 #clock {
-    background-color: @base01;
-}
-
-#battery {
-    background-color: @base06;
-    color: @base00;
+  background-color: @base01;
+  color: @base06;
 }
 
 #battery.charging, #battery.plugged {
-    color: @base00;
-    background-color: @base0B;
+  background-color: @base0B;
+  color: @base06;
 }
 
 @keyframes blink {
-    to {
-        background-color: @base06;
-        color: @base00;
-    }
+to {
+  background-color: #ffffff;
+  color: #000000;
+}
 }
 
+/* Using steps() instead of linear as a timing function to limit cpu usage */
 #battery.critical:not(.charging) {
-    background: @base08;
-    color: @base06;
-    animation-name: blink;
-    animation-duration: 0.7s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
+  background-color: @base08;
+  color: @base06;
+  animation-name: blink;
+  animation-duration: 0.5s;
+  animation-timing-function: steps(12);
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+#power-profiles-daemon {
+  padding-right: 15px;
+}
+
+#power-profiles-daemon.performance {
+  background-color: @base08;
+  color: @base06;
+}
+
+#power-profiles-daemon.balanced {
+  background-color: @base00;
+}
+
+#power-profiles-daemon.power-saver {
+  background-color: @base0B;
+  color: @base06;
+}
+
+label:focus {
+  background-color: #000000;
+}
+
+#network.disconnected {
+  background-color: @base08;
+}
+
+#pulseaudio.muted {
+  background-color: @base03;
+}
+
+#temperature.critical {
+  background-color: @base08;
+}
+
+#tray > .passive {
+  -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+  -gtk-icon-effect: highlight;
+  background-color: @base08;
+}
+
+#idle_inhibitor {
+  background-color: @base03;
+  color: @base06;
+}
+
+#idle_inhibitor.activated {
+  background-color: @base02;
+  color: @base06;
+}
+
+#privacy {
+  padding: 0;
+}
+
+#privacy-item {
+  padding: 0 5px;
+}
+
+#privacy-item.screenshare {
+  background-color: @base0F;
+  color: @base06;
+}
+
+#privacy-item.audio-in {
+  background-color: @base0E;
+  color: @base06;
+}
+
+#privacy-item.audio-out {
+  background-color: @base0D;
+  color: @base06;
+}
+
+.modules-left,
+.modules-center,
+.modules-right {
+  background-color: @base00;
+  opacity: 0.9;
+  padding: 4px;
+}
+
+window#waybar #window {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+/* Hide window title decoration when there is no window in the workspace */
+/* https://github.com/Alexays/Waybar/issues/1448#issuecomment-1078151905 */
+window#waybar.empty .modules-center {
+  background: none;
 }
