@@ -38,7 +38,7 @@ button:hover {
   text-shadow: inherit;
 }
 
-#workspaces button.focused {
+#workspaces button.active {
   background-color: @base02;
   color: @base06;
 }
@@ -48,9 +48,9 @@ button:hover {
   color: @base06;
 }
 
-#mode {
-  background-color: @base02;
-  box-shadow: inset 0 -3px #ffffff;
+#submaps {
+  background-color: @base03;
+  box-shadow: inset 0 -3px @base06;
 }
 
 #clock,
@@ -65,9 +65,8 @@ button:hover {
 #wireplumber,
 #custom-media,
 #tray,
-#mode,
+#submaps,
 #idle_inhibitor,
-#scratchpad,
 #power-profiles-daemon {
   padding: 0 10px;
 }
@@ -178,14 +177,6 @@ label:focus {
 #idle_inhibitor.activated {
   background-color: @base02;
   color: @base06;
-}
-
-#scratchpad {
-  background: rgba(0, 0, 0, 0.2);
-}
-
-#scratchpad.empty {
-  background-color: transparent;
 }
 
 #privacy {
