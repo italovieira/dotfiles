@@ -5,16 +5,16 @@ themes-dir = "colors"
 hook = "cp %f ~/.config/alacritty/colors.toml"
 
 [[items]]
-path = "https://github.com/rkubosz/base16-sway"
-name = "base16-sway"
+path = "https://github.com/kirasok/base16-hyprland"
+name = "base16-hyprland"
 themes-dir = "themes"
-hook = "cp %f ~/.config/sway/colors && swaymsg reload"
+hook = "cp %f ~/.config/hypr/colors.conf"
 
 [[items]]
 path = "https://github.com/mnussbaum/base16-waybar"
 name = "base16-waybar"
 themes-dir = "colors"
-hook = "cp %f ~/.config/waybar/colors.css && pkill -SIGRTMIN+7 waybar"
+hook = "cp %f ~/.config/waybar/colors.css && pkill -SIGUSR2 waybar"
 
 [[items]]
 path = "~/.config/tinted-theming/.custom-templates/tmux"
