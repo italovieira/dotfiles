@@ -51,7 +51,8 @@ button:hover {
 #submap {
   background-color: @base03;
   color: @base06;
-  padding: 0 5px;
+  padding-left: 5px;
+  padding-right: 5px;
 }
 
 #clock,
