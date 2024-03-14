@@ -34,20 +34,17 @@
       "tray"
     ],
 
+    "hyprland/workspaces": {
+    },
+
+    "hyprland/window": {
+      "separate-outputs": true
+    },
+
     "hyprland/submap": {
       "format": "<span style=\"italic\">{}</span>",
       "max-length": 8,
       "tooltip": false
-    },
-
-    "hyprland/workspaces": {
-      "persistent-workspaces": {
-        "1": [],
-        "2": [],
-        "3": [],
-        "4": [],
-        "5": []
-      }
     },
 
     "idle_inhibitor": {

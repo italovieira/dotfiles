@@ -5,7 +5,7 @@
   /* `otf-font-awesome` is required to be installed for icons */
   font-family: FontAwesome, Source Code Pro, Roboto, Helvetica, Arial, sans-serif;
   font-size: 13px;
-  border-radius: 15px; /* Adjust this to make the elements courners rounded  */
+  border-radius: 10px; /* Adjust this to make the elements courners rounded  */
 }
 
 window#waybar {
@@ -48,9 +48,10 @@ button:hover {
   color: @base06;
 }
 
-#submaps {
+#submap {
   background-color: @base03;
-  box-shadow: inset 0 -3px @base06;
+  color: @base06;
+  padding: 0 5px;
 }
 
 #clock,
@@ -109,7 +110,7 @@ to {
 
 #power-profiles-daemon.performance {
   background-color: @base08;
-  color: #ffffff;
+  color: @base06;
 }
 
 #power-profiles-daemon.balanced {
