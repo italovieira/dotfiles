@@ -28,8 +28,11 @@ return {
   },
 
   {
-    'jose-elias-alvarez/null-ls.nvim',
-    config = load_config('null_ls'),
+    'nvimtools/none-ls.nvim',
+    dependencies = {
+      "nvimtools/none-ls-extras.nvim",
+    },
+    config = load_config('none_ls'),
   },
 
   'andymass/vim-matchup',
