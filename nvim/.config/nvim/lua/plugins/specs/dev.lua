@@ -30,7 +30,7 @@ return {
   {
     'nvimtools/none-ls.nvim',
     dependencies = {
-      "nvimtools/none-ls-extras.nvim",
+      'nvimtools/none-ls-extras.nvim',
     },
     config = load_config('none_ls'),
   },
@@ -41,7 +41,12 @@ return {
     'mfussenegger/nvim-dap',
     dependencies = {
       'mfussenegger/nvim-dap-python',
-      'rcarriga/nvim-dap-ui',
+      {
+        'rcarriga/nvim-dap-ui',
+        dependencies = {
+          'nvim-neotest/nvim-nio',
+        }
+      },
       'theHamsta/nvim-dap-virtual-text',
     },
     config = load_config('dap'),
