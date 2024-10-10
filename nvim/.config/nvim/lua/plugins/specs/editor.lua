@@ -15,7 +15,6 @@ return {
     opts = {
       prompt_save_on_select_new_entry = false,
     },
-    dependencies = { 'nvim-tree/nvim-web-devicons' },
   },
 
   {
@@ -32,6 +31,7 @@ return {
       require('mini.cursorword').setup()
       require('mini.indentscope').setup()
       require('mini.pairs').setup()
+      require('mini.icons').setup()
     end
   },
 }
