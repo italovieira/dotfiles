@@ -16,4 +16,11 @@ return {
     ft = 'norg',
     config = load_config('neorg'),
   },
+
+  {
+    'MeanderingProgrammer/render-markdown.nvim',
+    ---@module 'render-markdown'
+    ---@type render.md.UserConfig
+    opts = {},
+  }
 }
