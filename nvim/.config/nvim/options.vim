@@ -13,3 +13,5 @@ set undolevels=10000
 if has('termguicolors')
   set termguicolors
 endif
+set ignorecase
+set smartcase

@@ -46,7 +46,7 @@ capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
 -- map buffer local keybindings when the language server attaches
 local servers = {
   pyright = {},
-  tsserver = {
+  ts_ls = {
     completions = {
       completeFunctionCalls = true,
     },
