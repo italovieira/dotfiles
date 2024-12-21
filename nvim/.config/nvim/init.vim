@@ -1,5 +1,6 @@
 runtime options.vim
 runtime maps.vim
+runtime commands.vim
 
 lua require('plugins')
 lua require('diagnostic')

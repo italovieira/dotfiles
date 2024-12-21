@@ -1,0 +1,1 @@
+command! CopyPathToClipboard let @+ = expand('%')
