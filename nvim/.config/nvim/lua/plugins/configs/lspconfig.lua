@@ -58,6 +58,7 @@ local servers = {
       completion = { callSnippet = 'Replace' },
     },
   },
+  yamlls = {},
 }
 
 for server, settings in pairs(servers) do
