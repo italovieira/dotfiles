@@ -22,5 +22,18 @@ return {
     ---@module 'render-markdown'
     ---@type render.md.UserConfig
     opts = {},
-  }
+  },
+
+  {
+    '3rd/image.nvim',
+    build = false,
+    opts = {
+      processor = 'magick_cli',
+    },
+  },
+  {
+    'HakonHarnes/img-clip.nvim',
+    event = 'VeryLazy',
+    opts = {},
+  },
 }
