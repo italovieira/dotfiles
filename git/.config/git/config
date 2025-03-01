@@ -8,16 +8,24 @@
 [diff]
 	tool = nvimdiff
 	colorMoved = default
+	algorithm = histogram
 [difftool]
 	trustExitCode = yes
+[commit]
+	verbose = true
 [merge]
 	tool = nvimdiff2
-	conflictstyle = zdiff3
+	conflictStyle = zdiff3
 [mergetool]
 	prompt = no
 	keepBackup = no
+[rebase]
+	autoSquash = true
+	autoStash = true
 [help]
-	autocorrect = prompt
+	autoCorrect = prompt
+[tag]
+	sort = -version:refname
 [rerere]
 	enabled = true
 [includeIf "gitdir:~/work/"]
