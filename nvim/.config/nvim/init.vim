@@ -4,6 +4,7 @@ runtime commands.vim
 
 lua require('plugins')
 lua require('diagnostic')
+lua require('lsp')
 
 silent! colorscheme gruvbox
 

@@ -15,3 +15,5 @@ if has('termguicolors')
 endif
 set ignorecase
 set smartcase
+set foldmethod=expr
+set foldlevel=99
