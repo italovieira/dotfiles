@@ -1,6 +1,7 @@
 vim.lsp.enable({
   'basedpyright',
   'bashls',
+  'gopls',
   'luals',
   'marksman',
   'tsls',
