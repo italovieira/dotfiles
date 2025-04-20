@@ -1,12 +1,9 @@
-vim.lsp.enable({
-  'basedpyright',
-  'bashls',
-  'gopls',
-  'luals',
-  'marksman',
-  'tsls',
-  'yamlls',
-})
+local lsp_configs = {}
+for _, file in pairs(vim.api.nvim_get_runtime_file('lsp/*.lua', true)) do
+  local server_name = vim.fn.fnamemodify(file, ':t:r')
+  table.insert(lsp_configs, server_name)
+end
+vim.lsp.enable(lsp_configs)
 
 vim.api.nvim_create_autocmd('LspAttach', {
   group = vim.api.nvim_create_augroup('lsp-config', {}),
@@ -78,9 +75,9 @@ vim.api.nvim_create_autocmd('LspAttach', {
     end
 
     if client:supports_method('textDocument/foldingRange') then
-     local win = vim.api.nvim_get_current_win()
-     vim.wo[win][0].foldexpr = 'v:lua.vim.lsp.foldexpr()'
-     vim.wo[win][0].foldtext = 'v:lua.vim.lsp.foldtext()'
+      local win = vim.api.nvim_get_current_win()
+      vim.wo[win][0].foldexpr = 'v:lua.vim.lsp.foldexpr()'
+      vim.wo[win][0].foldtext = 'v:lua.vim.lsp.foldtext()'
     end
   end,
 })
