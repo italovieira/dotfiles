@@ -8,13 +8,11 @@ return {
 
   {
     {
-      'hrsh7th/nvim-cmp',
-      config = load_config('cmp'),
-      dependencies = {
-        'hrsh7th/cmp-nvim-lsp',
-        'hrsh7th/cmp-buffer',
-        'hrsh7th/cmp-path',
-      },
+      'saghen/blink.cmp',
+      dependencies = { 'rafamadriz/friendly-snippets' },
+      version = '*',
+      opts_extend = { 'sources.default' },
+      config = load_config('blink_cmp')
     },
 
     {
