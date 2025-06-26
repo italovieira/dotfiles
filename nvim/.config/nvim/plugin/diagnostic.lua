@@ -4,6 +4,7 @@ vim.diagnostic.config({
   signs = true,
   underline = false,
   update_in_insert = false,
+  severity_sort = true,
 })
 
 -- :help diagnostic-toggle-virtual-lines-example
