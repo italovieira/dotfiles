@@ -2,7 +2,7 @@ local load_config = require('plugins.utils').load_config
 
 return {
   {
-    'epwalsh/obsidian.nvim',
+    'obsidian-nvim/obsidian.nvim',
     version = '*',
     ft = 'markdown',
     config = load_config('obsidian'),
