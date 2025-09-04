@@ -1,38 +1,24 @@
 local obsidian = require('obsidian')
 
+local workspaces = {}
+for _, workspace in ipairs({
+  { name = 'notes', path = '~/notes' },
+  { name = 'work',  path = '~/work/notes' },
+}) do
+  if vim.uv.fs_stat(vim.fs.abspath(workspace.path)) then
+    table.insert(workspaces, workspace)
+  end
+end
+
 obsidian.setup({
-  workspaces = {
-    {
-      name = 'notes',
-      path = '~/notes',
-    },
-    {
-      name = 'work',
-      path = '~/work/notes',
-    },
-  },
+  workspaces = workspaces,
 
   daily_notes = {
     folder = 'daily',
   },
 
   completion = {
-    nvim_cmp = true,
-  },
-
-  mappings = {
-    ['gf'] = {
-      action = function()
-        return obsidian.util.gf_passthrough()
-      end,
-      opts = { noremap = false, expr = true, buffer = true },
-    },
-    ['<c-space>'] = {
-      action = function()
-        return obsidian.util.toggle_checkbox()
-      end,
-      opts = { buffer = true },
-    },
+    blink = true,
   },
 
   note_id_func = function(title)
@@ -48,4 +34,6 @@ obsidian.setup({
   end,
 
   disable_frontmatter = true,
+
+  legacy_commands = false,
 })
