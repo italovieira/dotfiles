@@ -18,7 +18,6 @@ return {
     {
       'L3MON4D3/LuaSnip',
       dependencies = {
-        'saadparwaiz1/cmp_luasnip',
         'rafamadriz/friendly-snippets',
       },
       config = load_config('luasnip'),
@@ -54,10 +53,7 @@ return {
     'tpope/vim-dadbod',
     dependencies = {
       'kristijanhusak/vim-dadbod-ui',
-      {
-        'kristijanhusak/vim-dadbod-completion',
-        dependencies = 'nvim-cmp',
-      },
+      'kristijanhusak/vim-dadbod-completion',
     },
   },
 }

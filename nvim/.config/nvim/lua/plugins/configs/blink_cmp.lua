@@ -8,6 +8,7 @@ require('blink-cmp').setup({
 
   sources = {
     default = { 'lsp', 'path', 'snippets', 'buffer' },
+    per_filetype = { sql = { 'dadbod' } },
   },
 
   fuzzy = { implementation = 'prefer_rust_with_warning' },
