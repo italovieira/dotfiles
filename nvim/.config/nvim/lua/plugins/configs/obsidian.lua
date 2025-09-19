@@ -2,8 +2,14 @@ local obsidian = require('obsidian')
 
 local workspaces = {}
 for _, workspace in ipairs({
-  { name = 'notes', path = '~/notes' },
-  { name = 'work',  path = '~/work/notes' },
+  {
+    name = 'personal',
+    path = os.getenv('PERSONAL_NOTES_PATH') or '~/notes'
+  },
+  {
+    name = 'work',
+    path = os.getenv('WORK_NOTES_PATH') or '~/work/notes'
+  },
 }) do
   if vim.uv.fs_stat(vim.fs.abspath(workspace.path)) then
     table.insert(workspaces, workspace)
