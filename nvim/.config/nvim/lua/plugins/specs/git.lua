@@ -8,8 +8,17 @@ return {
     },
     cmd = 'Neogit',
   },
-  'sindrets/diffview.nvim',
-
+  {
+    'sindrets/diffview.nvim',
+    opts = {
+      keymaps = {
+        view = {
+          -- to not conflict with diagnostics toggle
+          ["<leader>e"] = false,
+        }
+      },
+    },
+  },
   {
     'lewis6991/gitsigns.nvim',
     dependencies = 'nvim-lua/plenary.nvim',
