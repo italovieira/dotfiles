@@ -3,11 +3,13 @@ local load_config = require('plugins.utils').load_config
 return {
   {
     'nvim-treesitter/nvim-treesitter',
+    branch = 'main',
     config = load_config('treesitter'),
     build = ':TSUpdate',
   },
   {
     'nvim-treesitter/nvim-treesitter-textobjects',
+    branch = 'main',
     after = 'nvim-treesitter',
   },
 
