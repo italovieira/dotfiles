@@ -1,3 +1,12 @@
+vim.pack.add({
+  'https://github.com/mfussenegger/nvim-dap',
+  'https://github.com/mfussenegger/nvim-dap-python',
+  'https://github.com/leoluz/nvim-dap-go',
+  'https://github.com/rcarriga/nvim-dap-ui',
+  'https://github.com/nvim-neotest/nvim-nio',
+  'https://github.com/theHamsta/nvim-dap-virtual-text',
+})
+
 local dap = require('dap')
 local dapui = require('dapui')
 local widgets = require('dap.ui.widgets')

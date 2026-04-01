@@ -2,10 +2,6 @@ runtime options.vim
 runtime maps.vim
 runtime commands.vim
 
-lua require('plugins')
-
-silent! colorscheme gruvbox
-
 syntax enable
 set background=dark
 

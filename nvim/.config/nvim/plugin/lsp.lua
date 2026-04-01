@@ -1,3 +1,6 @@
+vim.pack.add({ 'https://github.com/williamboman/mason.nvim' })
+require('mason').setup()
+
 local lsp_configs = {}
 for _, file in pairs(vim.api.nvim_get_runtime_file('lsp/*.lua', true)) do
   local server_name = vim.fn.fnamemodify(file, ':t:r')

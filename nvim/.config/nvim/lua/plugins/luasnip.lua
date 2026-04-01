@@ -1,3 +1,8 @@
+vim.pack.add({
+  'https://github.com/rafamadriz/friendly-snippets',
+  'https://github.com/L3MON4D3/LuaSnip',
+})
+
 local ls = require('luasnip')
 local types = require('luasnip.util.types')
 

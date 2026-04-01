@@ -1,14 +1,20 @@
+-- TODO: Only trigger obsidian-nvim on ft = 'markdown'
+vim.pack.add({
+  { src = 'https://github.com/obsidian-nvim/obsidian.nvim', version = vim.version.range('*') },
+  'https://github.com/nvim-lua/plenary.nvim',
+})
+
 local obsidian = require('obsidian')
 
 local workspaces = {}
 for _, workspace in ipairs({
   {
     name = 'personal',
-    path = vim.env.PERSONAL_NOTES_PATH or '~/notes'
+    path = vim.env.PERSONAL_NOTES_PATH or '~/notes',
   },
   {
     name = 'work',
-    path = vim.env.WORK_NOTES_PATH or '~/work/notes'
+    path = vim.env.WORK_NOTES_PATH or '~/work/notes',
   },
 }) do
   if vim.uv.fs_stat(vim.fs.abspath(workspace.path)) then
