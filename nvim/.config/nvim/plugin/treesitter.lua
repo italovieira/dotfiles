@@ -17,22 +17,20 @@ vim.pack.add({
   'https://github.com/nvim-treesitter/nvim-treesitter-context',
 })
 
+-- Neovim includes these parsers:
+-- c, lua, markdown, markdown_inline, vim, vimdoc
+-- :help treesitter-parsers
 require('nvim-treesitter').install({
   'bash',
   'python',
-  'lua',
   'javascript',
   'typescript',
   'sql',
-  'markdown',
-  'markdown_inline',
   'toml',
   'yaml',
   'json',
   'csv',
   'latex',
-  'vim',
-  'vimdoc',
   'gitcommit',
   'gitignore',
   'git_config',
