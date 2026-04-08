@@ -9,4 +9,4 @@ vim.pack.add({
 
 vim.g.gruvbox_italic = 1
 
-vim.cmd.colorscheme('gruvbox')
+vim.cmd.colorscheme(vim.env.NVIM_COLORSCHEME or 'gruvbox')
