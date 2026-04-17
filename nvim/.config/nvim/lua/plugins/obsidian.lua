@@ -45,7 +45,7 @@ obsidian.setup({
     return tostring(os.time()) .. '-' .. suffix
   end,
 
-  disable_frontmatter = true,
+  frontmatter = { enabled = true },
 
   legacy_commands = false,
 })
