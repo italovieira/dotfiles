@@ -1,7 +1,7 @@
 [[items]]
-path = "https://github.com/aarowill/base16-alacritty"
-name = "base16-alacritty"
-themes-dir = "colors"
+path = "https://github.com/tinted-theming/tinted-terminal"
+name = "tinted-terminal"
+themes-dir = "themes/alacritty"
 hook = "cp %f ~/.config/alacritty/colors.toml"
 
 [[items]]
@@ -11,7 +11,7 @@ themes-dir = "themes"
 hook = "cp %f ~/.config/hypr/colors.conf"
 
 [[items]]
-path = "https://github.com/mnussbaum/base16-waybar"
+path = "https://github.com/tinted-theming/base16-waybar"
 name = "base16-waybar"
 themes-dir = "colors"
 hook = "cp %f ~/.config/waybar/colors.css && pkill -SIGUSR2 waybar"
@@ -20,7 +20,7 @@ hook = "cp %f ~/.config/waybar/colors.css && pkill -SIGUSR2 waybar"
 path = "~/.config/tinted-theming/.custom-templates/tmux"
 name = "custom-tmux"
 themes-dir = "colors"
-hook = "cp %f ~/.tmux/theme.conf && tmux source-file ~/.tmux.conf"
+hook = "cp %f ~/.config/tmux/theme.conf && tmux source-file ~/.config/tmux/tmux.conf"
 
 [[items]]
 path = "https://github.com/tinted-theming/base16-dunst"
