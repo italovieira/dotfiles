@@ -2,10 +2,7 @@ runtime options.vim
 runtime maps.vim
 runtime commands.vim
 
-syntax enable
 set background=dark
-
-filetype plugin indent on
 
 " :h ft-syntax-omni
 if has('autocmd') && exists('+omnifunc')
