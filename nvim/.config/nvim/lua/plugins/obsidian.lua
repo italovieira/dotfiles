@@ -33,6 +33,15 @@ obsidian.setup({
     blink = true,
   },
 
+  mappings = {
+    ['gf'] = {
+      action = function()
+        return require('obsidian').util.gf_passthrough()
+      end,
+      opts = { noremap = false, expr = true, buffer = true },
+    },
+  },
+
   note_id_func = function(title)
     if title ~= nil then
       return title
