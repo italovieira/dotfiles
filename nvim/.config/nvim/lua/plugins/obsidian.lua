@@ -32,10 +32,6 @@ vim.api.nvim_create_autocmd('FileType', {
         folder = 'daily',
       },
 
-      completion = {
-        blink = true,
-      },
-
       note_id_func = function(title)
         if title ~= nil then
           return title
